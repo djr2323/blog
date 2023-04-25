@@ -1,0 +1,33 @@
+{
+  "name": "blog",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "nodemon --inspect src/index.js",
+    "watch":"node-sass -w src/resource/scss -o src/css ",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/djr2323/blog.git"
+  },
+  "keywords": [
+    "blog"
+  ],
+  "author": "djr23",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/djr2323/blog/issues"
+  },
+  "homepage": "https://github.com/djr2323/blog#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "express-handlebars": "^7.0.7"
+  },
+  "devDependencies": {
+    "node-sass": "^8.0.0",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.22"
+  }
+}
