@@ -7,6 +7,12 @@ const app = express();
 const port = 3000;
 app.use(express.static(path.join(__dirname, 'css')))
 app.use(express.static(path.join(__dirname, 'img')))
+app.use(express.urlencoded(
+    {
+        extended:true
+    }
+))
+app.use(express.json())
 //HTTP logger
 app.use(morgan('combined'));
 
@@ -20,5 +26,6 @@ console.log( "Path: ", path.join(__dirname,'resource/views'));
 
 app.get('/', (req, res)=>res.render('home'));
 app.get('/new', (req, res)=>res.render('news'));
-app.get('/search',(req,ré)=>res.render('search'))
+app.get('/search',(req,res)=>res.render('search'))
+app.post('/search',(req,res)=>res.send(`${req.body.q}`))
 app.listen(port,()=>console.log(`Example app listening at http://localhost:${port}`));
