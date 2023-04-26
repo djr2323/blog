@@ -3,6 +3,10 @@ const express = require('express');
 const morgan = require('morgan');
 const handlebars = require('express-handlebars').engine;
 
+const newController = require('../src/app/controllers/NewController')
+
+const route = require('./routes')
+
 const app = express();
 const port = 3000;
 app.use(express.static(path.join(__dirname, 'css')))
@@ -24,8 +28,7 @@ app.set('view engine','hbs');
 app.set('views',path.join(__dirname,'resource/views'))
 console.log( "Path: ", path.join(__dirname,'resource/views'));
 
-app.get('/', (req, res)=>res.render('home'));
-app.get('/new', (req, res)=>res.render('news'));
-app.get('/search',(req,res)=>res.render('search'))
-app.post('/search',(req,res)=>res.send(`${req.body.q}`))
+route(app)
+
+
 app.listen(port,()=>console.log(`Example app listening at http://localhost:${port}`));
