@@ -5,7 +5,7 @@
   "main": "src/index.js",
   "scripts": {
     "start": "nodemon --inspect src/index.js",
-    "watch":"node-sass -w src/resource/scss -o src/css ",
+    "watch": "node-sass -w src/resource/scss -o src/css ",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -23,11 +23,15 @@
   "homepage": "https://github.com/djr2323/blog#readme",
   "dependencies": {
     "express": "^4.18.2",
-    "express-handlebars": "^7.0.7"
+    "express-handlebars": "^7.0.7",
+    "mongoose": "^7.0.5"
   },
   "devDependencies": {
-    "node-sass": "^8.0.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.2.2",
     "morgan": "^1.10.0",
-    "nodemon": "^2.0.22"
+    "node-sass": "^8.0.0",
+    "nodemon": "^2.0.22",
+    "prettier": "^2.8.8"
   }
 }

@@ -7,6 +7,13 @@ const newController = require('../src/app/controllers/NewController')
 
 const route = require('./routes')
 
+const db = require('./config/db')
+
+//connect db
+db.connect();
+
+
+
 const app = express();
 const port = 3000;
 app.use(express.static(path.join(__dirname, 'css')))
