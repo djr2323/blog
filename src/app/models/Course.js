@@ -1,11 +1,12 @@
-const mongoose = require('mongoose')
+const mongoose = require("mongoose");
 const schema = mongoose.Schema;
 
-const Course = new schema({
-    name:{type:String},
-    description:{type:String},
-    createAt:{type:Date, default:Date.now},
-    updateAt:{type:Date, default:Date.now},
-})
+const Course = new schema(
+  {
+    name: { type: String, required: true },
+    description: { type: String },
+  },
+  { timestamps: true }
+);
 
-module.exports = mongoose.model('Course',Course)
+module.exports = mongoose.model("Course", Course);
